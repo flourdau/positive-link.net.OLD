@@ -1,0 +1,26 @@
+/*
+        PORTFOLIO       */
+#portfolio>p    {font-size:.71em}
+
+#portfolio li   {font-size:.71em}
+
+#portfolio>p>span:last-child    {
+        font-size:1em;
+        width:190px;
+        white-space:nowrap;
+        animation:type 5s steps(50, end), caret-blink .8s ease infinite;
+        border-right:10px solid rgb(50, 150, 50)
+}
+
+@keyframes caret-blink  {
+        0%      {border-color:transparent}
+        50%     {border-color:rgb(50, 150, 50)}
+        100%    {border-color:transparent}
+}
+
+#portfolio ul, #dateTimeParty ul        {
+        padding:0 0 0 1.5rem;
+        list-style-type:disc
+}
+
+#portfolio h3   {font-size:2rem}

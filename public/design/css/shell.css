@@ -1,0 +1,64 @@
+/*
+FIRST SHELL */
+#infos, #portfolio, #read_me {flex-flow:column nowrap}
+
+/* MYSHELL */
+.myShell {
+        flex:auto;
+        flex-flow:column wrap;
+        justify-self:flex-start;
+        align-self:flex-start;
+        overflow:hidden;
+        font-family:monospace;
+        color:rgb(19, 164, 90)
+}
+
+.myShell a {color:rgb(107, 208, 24)}
+
+.myShell>div {font-size:1.5em}
+
+.myShell h2 {font-size:2.5em}
+
+.myShell h3 {
+        color:rgb(50, 150, 50);
+        font-size:2em
+}
+
+.myShell h3 {padding:2rem 0 0 0}
+
+.myShell>div>div:first-child {color:rgb(107, 208, 24)}
+
+.myShell>div>div:first-child>ul {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center
+}
+
+.myShell>div>div:first-child>ul>li>ul {
+        display:flex;
+        flex-flow:row nowrap
+}
+
+.myShell>div>div:first-child>ul>li li{
+        padding:0.5rem;
+        vertical-align:middle;
+        flex:auto
+}
+
+.myShell>div>div:first-child>ul li:nth-child(2){
+        cursor:pointer;
+        flex:10
+}
+
+.myShell>div>div:nth-child(2)>section::-webkit-scrollbar  {display:none}
+
+/* CONSOLE */
+#shell {padding:1rem}
+#shell hr{width:100%}
+
+#shell>div>div:nth-child(2)>section {
+        max-height:520px;
+        overflow:auto;
+        padding:1rem
+}

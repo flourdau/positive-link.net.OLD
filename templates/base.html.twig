@@ -1,0 +1,292 @@
+<!-- 
+{{ titleAscii }} 
+-------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="{{ app.SITE.APP_LANG }}">
+        <head>
+                <meta charset="{{ app.SITE.APP_CHARSET }}">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta name="description" content="{{ app.SITE.APP_DESCRIPTION }}">
+                <meta name="author" content="{{ app.WEB_MASTER.APP_FIRSTNAME_WM }} {{ app.WEB_MASTER.APP_LASTNAME_WM }}">
+                <title>{% block title %}Welcome!{% endblock %}</title>
+                <!-- CSS -->
+                <link rel="stylesheet" href="/design/css/default.css"/>
+                {% block stylesheets %}{% endblock %}
+                <link rel="stylesheet" href="/design/css/shell.css"/>
+                <link rel="stylesheet" href="/design/css/clock.css"/>
+                <link rel="stylesheet" href="/design/css/clock.screen.css"/>
+                {% block CDN %}
+                <link rel="stylesheet" href="/design/css/default.screen.css"/>
+                <!-- FONTS -->
+                <link rel="stylesheet" type="text/css" href="/design/fonts/OpenSans/OpenSans.css"/>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+                {% block myBg %}
+                <style>body {background-image:url(/design/img/bg/webP/{{ myBg }})}</style>
+                {% endblock %}
+                {% endblock %}
+        </head>
+        {% block body %}
+        <body>
+
+                {% block nav %}
+                <nav>
+                        <h1>
+                                <i class="material-icons">favorite_border</i>
+                                <a class="tr2" href="{{ path('home') }}">
+                                        <pre>{% if ascii is defined %}<code>{{ ascii }}</code>{% else %}<code>{{ myName }}</code>{% endif %}</pre>
+                                </a>
+                                <a class="tr1" href="{{ path('home') }}">{{ app.SITE.APP_TITLE }}</a>
+                        </h1>
+                        <ul>
+                                <li class='myDisplayNone'>
+                                        <ul>
+                                                <h5>Musiques: </h5>
+                                                <li><a>Deezer</a></li>
+                                                <li><a>Spotify</a></li>
+                                                <li><a>Soundcloud</a></li>
+                                                <li><a>Galaxie FM Player</a></li>
+                                        </ul>
+                                        <ul>
+                                                <h5>TV: </h5>
+                                                <li><a>YouTube</a></li>
+                                                <li><a>Twitch</a></li>
+                                                <li><a>Orange</a> TV</li>
+                                                <li><a>Netflix</a></li>
+                                                <li><a>Disney+</a></li>
+                                                <li><a>Amazon</a> Prime</li>
+                                        </ul>
+                                        <ul>
+                                        <h5>Games: </h5>
+                                                <li><a>Steam</a></li>
+                                                <li><a>Epic</a></li>
+                                                <li><a>Ubisoft</a></li>
+                                                <li><a>Gog</a></li>
+                                                <li><a>Gw2</a></li>
+                                        </ul>
+                                </li>
+                                <li class='myDisplayNone'><a href="#">ReadMe</a></li>
+                                <li class='myDisplayNone'><a href="#">Infos</a></li>
+                                <li class=''><a href="https://blog.positive-link.net/">Blog</a></li>
+                                <li class='myDisplayNone'><a href="{{ path('home') }}#login">Login</a></li>
+                                <li class='myDisplayNone'><a href="">Settings</a></li>
+                                <li class='myDisplayNone'><i class="material-icons">dark_mode</i></li>
+                                <li class='myDisplayNone'><i class="material-icons">search</i></li>
+                        </ul>
+                </nav>
+                {% endblock %}
+                {% block message %}
+                <section id="message">
+                        <div><h6>{{ myDicos.bonjour }} & {{ myDicos.welcome }}! : )</h6></div>
+                </section>
+                {% endblock %}
+                {% block header %}
+                <header>
+                        <section>
+                                {% block myShell %}
+                                <section id="shell" class="myShell {% if formCalendar == 1 %}myDisplayFlex{% endif %}">
+                                        <div>
+                                                <!-- Barre -->
+                                                <div class="myMax600px bgColor1_98">
+                                                        <ul>
+                                                                <li><i class="material-icons btnCode">code</i></li>
+                                                                <li>{{ name }}</li>
+                                                                <li>
+                                                                        <ul>
+                                                                                <li><i class="material-icons btnMinimize">minimize</i></li>
+                                                                                <li><i class="material-icons btnMaximize">web_asset</i></li>
+                                                                                <li><i class="material-icons btnClose">disabled_by_default</i></li>
+                                                                        </ul>
+                                                                </li>
+                                                        </ul>
+                                                </div>
+                                                <!-- Content -->
+                                                <div class="myMax600px bgColor1_98">
+                                                        <section id="dateTimeParty" {% if formCalendar == 1 %}class="myDisplayFlex"{% else %}class="myDisplayNone"{% endif %}>  
+                                                        <div>                 
+                                                                <div>
+                                                                <ul>
+                                                                        <h3>Météo: </h3>
+                                                                        <li><p>Température: {{ Meteo.main.temp }}°C</p></li>
+                                                                        <li><p>Ressenti: {{ Meteo.main.feels_like }}°C</p></li>
+                                                                        <li><p>Minimum: {{ Meteo.main.temp_min }}°C</p></li>
+                                                                        <li><p>Maximum: {{ Meteo.main.temp_max }}°C</p></li>
+                                                                        <li><p>Pression: {{ Meteo.main.pressure }}hPa</p></li>
+                                                                        <li><p>Humidité: {{ Meteo.main.humidity }}%</p></li>
+                                                                        <li><p>Vents: {{ Meteo.wind.deg }}° - {{ Meteo.wind.speed }}m/s</p></li>
+                                                                </ul>
+                                                                <ul>
+                                                                        <h3>Air: </h3>
+                                                                        {% for k7, v7 in Air.list.0.components %}
+                                                                        <li><p>{{ k7|capitalize }}: {{ v7 }} </p></li>
+                                                                        {% endfor %}
+                                                                </ul>
+                                                                <ul>
+                                                                        <h3>Lune: </h3>
+                                                                        <li><p>Age: {{ Moon.Age }}jour{% if Moon.Age > 1 %}s{% endif %}</p></li>
+                                                                        <li><p>Distance: {{ Moon.Distance }}Km</p></li>
+                                                                        <li><p>Lumineusité: {{ Moon.Lumi }}</p></li>
+                                                                        <li><p>Stage: {{ Moon.Stage }}</p></li>
+                                                                        <li><p>Phase: {{ Moon.Name }}</p></li>
+                                                                        <li><p>Nouvelle: {{ Moon.newNext }}</p></li>
+                                                                        <li><p>Pleine: {{ Moon.fullNext }}</p></li>
+                                                                </ul>
+                                                                <ul>
+                                                                        <h3>Soleil: </h3>
+                                                                        <li><p>Sunrise: {{ Sun.0.sunrise|date("H:i:s") }}</p></li>
+                                                                        <li><p>Sunset: {{ Sun.0.sunset|date("H:i:s") }}</p></li>
+                                                                        <li><p>Elevation: {{ Sun.1.Elevation }}°</p></li>
+                                                                        <li><p>Azimuth: {{ Sun.1.Azimuth }}°</p></li>
+                                                                </ul>
+                                                                </div>
+                                                                <ul>
+                                                                        <h3>Calendrier: </h3>
+                                                                        <li><p>Timestamp: {{ Calendar.1.Timestamp }}</p></li>
+                                                                        <li><p>{{ Calendar.1.Day.nameFr }} {{ Calendar.1.Day.dayMonth }} {{ Calendar.1.Month.nameFr }} {{ Calendar.1.Year }} {{ Calendar.1.Hour }}</p></li>
+                                                                        <li><p>{{ Calendar.1.Timestamp|date('d-m-y') }}</p></li>
+                                                                        <li><p>{{ Calendar.1.Timestamp|date('D d M Y H:i:s') }}</p></li>
+                                                                        <li><p>{{ Calendar.1.Timestamp|date('y-m-d') }}</p></li>
+                                                                        <li><p>Timezone type: {{ usrDate.timezone_type }} {{ usrDate.timezone }}</p></li>
+                                                                        <li><p>
+                                                                                {% for key, value in Calendar.0 %}
+                                                                                        {{ key }} -
+                                                                                        {% for v in value %}
+                                                                                                {{ v }}
+                                                                                        {% endfor %}
+                                                                                {% endfor %}
+                                                                        </p></li>
+                                                                        <li><p>Année: {% if Calendar.1.Bissextile == 0 %}Non-{% endif %}Bissextile</p></li>
+                                                                        <li><p>Age: {{ Calendar.1.Age }}</p></li>
+                                                                        <li><p>{{ Calendar.1.Dicton }}</p></li>
+                                                                        <li><p>Saint{% if Calendar.1.Day.Saint.0 == 'F' %}e{% endif %}: {{ Calendar.1.Day.Saint.1 }}</p></li>
+                                                                        <li><p>Prénom: {% for value in Calendar.1.Name %}{{ value }} {% endfor %}</p></li>
+                                                                        <li><p>{% for k, v in Astro %} {{ k }} {{ v.0 }} {{ v.1 }} {{ v.2 }}{% endfor %} {{ astroChinois }}</h3></li>
+                                                                </ul>
+                                                        </div>
+                                                        </section>
+                                                        <section id="read_me" {% if formCalendar == 1 %}class="myDisplayNone"{% endif %}>{% apply markdown_to_html %}{{ myReadMe }}{% endapply %}</section>
+                                                        <section id="infos" {% if formCalendar == 1 %}class="myDisplayNone"{% endif %}>
+                                                                <ul>
+                                                                        <h3>Infos Client: </h3>
+                                                                        <li><p>IP:<strong> {{ _IP }}</strong></p><li>
+                                                                        <li><p>Agent:<strong> {{ _usrAgent }}</strong></p><li>
+                                                                        <li><p>Résolution:<strong> <span id='myWidth'></span>x<span id='myHeight'></span></strong></p><li>
+                                                                        <li>
+                                                                                <ul>
+                                                                                        <li><p>Coordonnées:<strong> {{ Meteo.name }} {{ Meteo.sys.country }}</strong></p></li>
+                                                                                        <li><p>Latitude:<strong> {{ Meteo.coord.lat }}</strong></p></li>
+                                                                                        <li><p>Longitude:<strong> {{ Meteo.coord.lon }}</strong></p></li>
+                                                                                </ul>
+                                                                        </li>
+                                                                </ul>
+                                                        </section>
+                                                </div>
+                                                <!-- Input -->
+                                                {# <div class="myMax600px bgColor1_98">
+                                                        <input name="namePicture" type="text">
+                                                </div> #}
+                                        </div>
+                                </section>
+                                {% endblock %}
+                                {% block myClock %}
+                                <section id="myClock" class="myShell">
+                                        <div>
+                                                <!-- Barre -->
+                                                <div class="myBgClock">
+                                                        <ul>
+                                                                <li><i class="material-icons btnCode">code</i></li>
+                                                                <li></li>
+                                                                <li>
+                                                                        <ul>
+                                                                                <li></li>
+                                                                                <li></li>
+                                                                                <li><i class="material-icons btnClose">disabled_by_default</i></li>
+                                                                        </ul>
+                                                                </li>
+                                                        </ul>
+                                                </div>
+                                                <!-- Content -->
+                                                <div class="myBgClock">
+                                                        <section>
+                                                                <ul>
+                                                                        <li id='myAir'>
+                                                                                {% if Air.list.0.main.aqi > 1 %}
+                                                                                <ul>
+                                                                                        <li><span></span></li>
+                                                                                        <li><span>Aqi: {{ Air.list.0.main.aqi }}</span></li>
+                                                                                </ul>
+                                                                                {% endif %}
+                                                                        </li>
+                                                                        <li id='myMeteo'>
+                                                                                <ul>
+                                                                                        <li><span><img id='myLogoTemp' src='https://openweathermap.org/img/w/{{ Meteo.weather.0.icon }}.png' alt='Icon Météo'/></span></li>
+                                                                                        <li><span id='myTemp'>{{ Meteo.main.temp }}°C </span></li>
+                                                                                </ul>
+                                                                        </li>
+                                                                        <li id='myHour'><span>{{ myHour }}</span></li>
+                                                                        <li id='myDate'><span>{{ myDate }}</span></li>
+                                                                </ul>
+                                                        </section>
+                                                </div>
+                                                <!-- Input -->
+                                                <div class="myBgClock">
+                                                        <form id="formCalendar" method="get">
+                                                        <div>
+                                                                <input value="{{ Calendar.1.Timestamp|date('Y-m-d') }}" name="strDate" type="date">
+                                                                <input value="{{ Calendar.1.Timestamp|date('H:i') }}" name="strTime" type="time">
+                                                                <input placeholder="{{ Meteo.name }}" value="{{ Meteo.name }}" name="strCity" type="text">
+                                                                <input value="{{ formCalendar }}" name="formCalendar" type="hidden">
+                                                        </div>
+                                                        </form>
+                                                </div>
+                                        </div>
+                                </section>
+                                {% endblock %}
+                        </section>
+                </header>
+                {% endblock %}
+                {% block main %}{% endblock %}
+                {% block footer %}
+                <footer>
+                        <!--    Icons -->
+                        <ul>
+                                <li><a target="blank" alt"GitHub" href="https://github.com/flourdau"><span>Github</span></a></li>
+                                <li><a target="blank" alt"Twitter" href="https://twitter.com/flourdau"><span>Twitter</span></a></li>
+                                <li><a target="blank" alt"Discord" href="https://discord.gg/BjWaTGa8JG"><span>Discord</span></a></li>
+                        </ul>
+                        <!--    Address -->
+                        <address>
+                                <ul>
+                                        <li><i class="material-icons">favorite_border</i></li>
+                                        <li><a href="{{ path('home') }}">{{ app.SITE.APP_TITLE }}</a></li>
+                                        <li><span>2K19 - {{ "now"|date("Y") }}</span></li>
+                                        <li><a href="/portfolio">{{ app.WEB_MASTER.APP_LASTNAME_WM }} {{ app.WEB_MASTER.APP_FIRSTNAME_WM }}</a></li>
+                                </ul>
+                        </address>
+                </footer>
+                {% endblock %}
+                {% block controls %}
+                <section id="myMenuHeader">
+                        <form class="myDisplayFlex">
+                                <button name="left" type="button" value="left">
+                                        <i class="bgColor1_15 material-icons">keyboard_arrow_left</i>
+                                </button>
+                                <button name="right" type="button" value="right">
+                                        <i class="bgColor1_15 material-icons">keyboard_arrow_right</i>
+                                </button>
+                                <input name="namePicture" type="hidden" value="{{ myBg }}">
+                        </form>
+                        <div class="myDisplayFlex bgColor1_15">
+                                <span>{{ myBg }}</span>
+                                <i class="material-icons">aspect_ratio</i>
+                        </div>
+                </section>
+                {% endblock %}
+        </body>
+        {% endblock %}
+        {% block scripts %}
+                <script src="/js/lib/datetime.js"></script>
+                <script src="/js/btn.js"></script>
+                <script src="/js/lib/myShell.js"></script>
+                <script src="/js/ancre.js"></script>
+        {% endblock %}
+</html>

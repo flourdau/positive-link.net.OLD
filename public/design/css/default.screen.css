@@ -1,0 +1,27 @@
+@media (min-width:630px)        {
+        h1 a:last-child {
+                line-height:5em;
+                font-size:4rem
+        }
+
+        .tr1 {display:none}
+        .tr2 {display:flex}
+
+}
+
+@media (max-width:630px)        {
+
+        nav     {
+                display:flex;
+                flex-direction:column;
+                margin:0 0 6rem 0
+        }
+
+        footer  {
+                font-size:1.1rem;
+                margin:6rem 0 0 0
+        }
+
+        #message>div>h6 {font-size:1.4rem}
+        #message>div    {top:6rem}
+}

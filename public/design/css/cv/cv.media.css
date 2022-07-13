@@ -1,0 +1,31 @@
+/* MEDIA QUERY */
+@media(max-width:1650px) {
+
+}
+
+@media(max-width:1360px) {
+
+    main>section {
+        width:80%;
+        margin:0 10%
+    }
+
+    main>section:nth-child(1)>ul>li:nth-child(3) {
+        max-width:100%
+    }
+
+}
+
+
+@media screen and (max-width: 64em) {
+
+    header>div, main, footer {
+        zoom:2;
+    }
+
+    main>section {
+        width:98%;
+        margin:0 1%
+    }
+
+}

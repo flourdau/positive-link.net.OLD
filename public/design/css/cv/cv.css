@@ -1,0 +1,248 @@
+.printi, .noscreen {  display:none  }
+
+body  {
+    zoom:0.95;
+    font-family:Open Sans;
+    background:url("../../img/bg/webP/00.webp") ;
+    background-size:cover
+}
+
+body>section  {
+  background-image:linear-gradient(to bottom ,
+    rgba(255,255,255,0.05) 0%,
+    rgba(255,255,255,0.93) 8%,
+    rgba(255,255,255,0.93) 99%,
+    rgba(255,255,255,0.05) 100%)
+}
+
+a {
+    text-decoration:underline;
+    color:#006064
+}
+a:hover {   color:#428e92 }
+a:visited { color:#00363a }
+
+address a { text-decoration:none  }
+
+h1, li p, li span { color:#00251a }
+
+
+h2 {  text-align:center }
+
+h1, h2, h3, .material-icons {
+    vertical-align:middle;
+    font-weight:bold;
+}
+
+main h3 {   margin-top:10%  }
+
+main h2 {   margin-bottom:5%    }
+
+h6  {   text-decoration:overline }
+
+h4, h6  {   font-weight:bold }
+
+h1, header>div>div  {   text-align:center }
+
+
+/* HEADER */
+header  {
+    padding:1% 0 0 0;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    justify-content:space-evenly
+}
+
+
+header>div  {
+    width:70%;
+    margin:4% 0 4% 0
+}
+
+header>div>p  {
+    font-style:italic;
+    text-align:center
+}
+
+
+/* BLOCKS ID*/
+header>address  {
+    display:flex;
+    flex-direction:column;
+    width:480px;
+    height:320px;
+    background:url("../../img/flourdau.png") no-repeat top 0 left 0;
+    border:0.5px solid #444;
+    border-radius:5%;
+    box-shadow:10px 10px 5px #888888;
+    padding:1% 0.5% 0 0.5%
+}
+
+header>address:hover  { background:url("../../img/flourdau.png") no-repeat top -320px left 0 }
+
+header>address a:hover  { text-decoration:none  }
+
+header>address>strong>span:first-child  {
+    background-image:linear-gradient(to right ,
+        rgba(0,0,0,0) 3%,
+        rgba(255,255,255,.5)90%,
+        rgba(0,0,0,0) 97%);
+    color:black
+}
+
+header>address>strong {
+    display:flex;
+    flex-direction:column;
+    vertical-align:middle;
+    font-size:1em;
+    line-height:1.3em;
+    font-weight:bold
+}
+
+
+/* QR CODE  */
+header>address>strong>img {
+    display:block;
+    width:180px;
+    height:180px;
+    cursor:none;
+    margin:2% 0 1% 3%
+}
+
+
+/* LINKS */
+header>address li {
+    padding:0;
+    list-style:none
+}
+
+header>address>strong>ul  {
+    margin:0 0 0 15px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:row;
+    justify-content:left
+}
+
+header>address>strong>ul img {
+    margin:0 5px;
+    height:25px
+}
+
+header>address>strong>ul i {
+    margin:0 3px;
+}
+
+
+/* .dropdown { display:inline  } */
+.dropdown>button, .dropdown>button:hover  { color:#212529  }
+
+.clic { text-align:right  }
+.clic:hover { color:SILVER  }
+
+
+/* MAIN */
+ main  {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    justify-content:space-evenly
+}
+
+main>section  { 
+    background-color:rgba(133,220,141,.15);
+    margin-bottom:1%;
+}
+main>section:hover  { background-color:rgba(133,220,141,.20)  }
+
+main>section h2  {
+    text-align:center;
+    cursor:pointer;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-start
+}
+
+
+/* BLOCK COMPETENCES */
+main>section:nth-child(1)>ul {
+    list-style:none;
+    padding:0
+}
+
+
+/*  SOFT SKILLS - DIVERS */
+main>section:nth-child(1)>ul>li:nth-child(1) {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    padding:0
+}
+
+
+/* LANGAGES - FRAMEWORK - CMS - SOFTWARE */
+main>section:nth-child(1)>ul>li:nth-child(2) {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly
+}
+
+main>section:nth-child(1)>ul>li:nth-child(2)>section>ul {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    padding:0
+}
+
+main>section:nth-child(1)>ul>li:nth-child(2) section li{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    margin-right:5%
+}
+
+main>section:nth-child(1)>ul>li img {
+  width:2.5em;
+  max-width:100px
+}
+
+
+/* HARDWARE */
+main>section:nth-child(1)>ul>li:nth-child(3) {
+    max-width:480px
+}
+
+
+/* FORMATION - XP */
+main>section:nth-child(2)>ul {
+    list-style:none;
+    padding:0
+}
+
+
+/* 42 */
+main>section:nth-child(2)>ul:nth-child(3)>li:nth-child(3) {
+    display:flex;
+    flex-direction:row
+}
+
+main>section:nth-child(2)>ul:nth-child(3)>li:nth-child(3) ul>li:nth-child(1) {
+    list-style:none;
+    padding:0
+}
+
+main>section:nth-child(3)>section>ul>li:last-child {
+    list-style:none;
+}
+
+
+/* FOOTER */
+footer  {
+  line-height:40px;
+  text-align:center
+}

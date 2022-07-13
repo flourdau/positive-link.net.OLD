@@ -1,0 +1,52 @@
+/*
+        CLOCK   */
+@media screen and (max-width: 1000px) {
+        #myTemp {font-size:2em}
+        #myHour {font-size:2em}
+        #myDate {font-size:2em}
+        #myMeteo img {width:85px}
+
+        #myClock>div>div:last-child>form>div {
+                flex-flow:column-reverse wrap;
+                align-items:center;
+                justify-content:center
+        }
+
+        #myClock input {font-size:1.2rem}
+        #myClock input:focus {font-size:1.3rem}
+}
+    
+@media screen and (max-width:630px) {
+
+        #myClock>div>div:nth-child(2)>section:first-child>ul>li {
+            padding:0;
+            align-items:center;
+            justify-content:center
+        }
+
+        #myClock>div>div:nth-child(2)>section:first-child>ul {
+            width:100%;
+            justify-self:center;
+            align-self:center
+        }
+
+        #myClock input {
+                text-align:center;
+                padding:0
+        }
+
+        #myClock>div>div:last-child>form>input {width:100%}
+
+        #myAir {
+                flex-direction:row;
+                align-items:center;
+                justify-content:center
+        }
+
+        #myClock>div>div:nth-child(2)>section:first-child>ul {padding:1rem 0.5rem}
+
+        #myTemp {font-size:1.25em}
+        #myHour {font-size:2em}
+        #myDate {font-size:1em}
+        #myMeteo img {width:65px}
+}

@@ -1,0 +1,27 @@
+{
+
+    "SITE"          :   {
+        "APP_LANG_DEFAULT"      :   "Fr_FR",
+        "APP_TITLE"             :   "Positive-Link.net",
+        "APP_DESCRIPTION"       :   "Bienvenue sur mon site personel! : )",
+        "APP_LANG"              :   "Fr-FR",
+        "APP_CHARSET"           :   "UTF-8"
+    },
+
+    "ADMIN"         :   {
+        "APP_LASTNAME_ADM"      :   "LOURDAUX",
+        "APP_FIRSTNAME_ADM"     :   "Florian",
+        "APP_MAIL_ADM"          :   "lourdaux.florian.pro@gmail.com"
+    },
+
+    "WEB_MASTER"    :   {
+        "APP_LASTNAME_WM"       :   "LOURDAUX",
+        "APP_FIRSTNAME_WM"      :   "Florian",
+        "APP_MAIL_WM"           :   "lourdaux.florian.pro@gmail.com"
+    },
+
+    "WEB_API"    :   {
+        "APP_OPENWEATHERMAP"    :   "LOURDAUX"
+    }
+
+}

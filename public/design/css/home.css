@@ -1,0 +1,171 @@
+/* 
+        TITLE */
+h1 {
+        word-break:normal;
+        flex:7;
+        transition:.2s;
+        display:flex;
+        flex-flow:row nowrap;
+        align-items:center
+}
+
+h1 a {
+        word-break:keep-all;
+        font-weight:bold;
+        color:white
+}
+
+h1>a>pre>code {color:rgb(19, 164, 90)}
+h1>a>pre>code:hover {color:rgb(255, 255, 255)}
+h1>i {
+        color:rgb(221, 96, 159);
+        padding:0 1rem 0 2rem
+}
+
+h1 a:last-child {
+        line-height:2em;
+        font-size:2rem
+}
+
+.tr1 {display:flex}
+.tr2 {display:none}
+
+
+/* 
+        NAVBAR */
+nav {
+        display:flex;
+        flex-flow:row wrap;
+        justify-content:space-around;
+        margin:0 0 1rem 0
+}
+
+/*
+First level */
+nav>ul {
+        display:flex;
+        flex-direction:row nowrap;
+        justify-content:space-around;
+        align-items:center;
+        flex:3
+}
+
+nav>ul>li>a {font-weight:bold}
+
+/* 
+All li */
+nav>ul li {
+        vertical-align:middle;
+        align-self:center
+}
+        
+nav>ul>li a, nav>ul:nth-child(2)>li i {
+        background-color:transparent;
+        border-bottom:.25rem solid transparent
+}
+
+nav>ul>li a:hover,
+nav>ul>li a:focus {border-bottom-color:rgba(255, 255, 255, .25)}
+
+
+/* 
+        FOOTER */
+footer>address>ul a {color:rgb(158, 146, 228)}
+
+footer ul {padding:1.5rem}
+
+footer>ul a {color:rgb(19, 164, 90)}
+
+footer>ul {
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:center
+}
+
+footer>address>ul {
+        color:white;
+        display:flex;
+        flex-flow:row wrap;
+        align-items:center;
+        justify-content:center
+} 
+
+footer>address>ul i {color:rgb(221, 96, 159)}
+
+footer>ul:first-child {padding:1 3em 0 0}
+footer>ul li a{padding:0.5rem 0.5em 0 0.5rem}
+address li a, address li span {padding:0.5rem 1.5em 0 0.5rem}
+      
+        
+/*
+        MESSAGES */
+#message>div {
+        padding:2rem;
+        display:flex;
+        position:fixed;
+        top:15rem;
+        left:-100%;
+        animation:myfirst 10s;
+        animation-direction:alternate
+}
+
+#message>div>h6 {
+        color:rgb(158, 146, 228);
+        font-size:2rem;
+        font-weight:bold
+}
+        
+@keyframes myfirst {
+        0%      {left:-100%}
+        30%     {left:2rem}
+        70%     {left:2rem}
+        100%    {left:-100%}
+}
+        
+        
+/*
+        CONTROLS */
+#myMenuHeader>form:first-child i,
+#myMenuHeader>div:last-child {
+        color:rgb(255, 255, 255, .1)
+}
+        
+#myMenuHeader>form:first-child i:hover,
+#myMenuHeader>div:last-child:hover {
+        color:rgb(255, 255, 255, 0.75)
+}
+        
+#myMenuHeader>form:first-child i        {
+        font-size:8em;
+        margin:1rem
+}
+        
+#myMenuHeader>form,
+#myMenuHeader>div {
+        justify-content:space-between
+}
+        
+#myMenuHeader>div:hover {
+        background-color:rgb(42, 42, 42, 0.15)
+}
+        
+#myMenuHeader>form>button, #myMenuHeader>form>button:active {
+        background-color:transparent;
+        border:none
+}
+
+
+/*
+DATEPARTY */
+#dateTimeParty {
+        flex-flow:row wrap;
+        justify-content:space-around
+}
+
+#dateTimeParty>div {
+        display:flex;
+        flex-flow:row wrap
+}
+
+#dateTimeParty ul {padding:2.5rem}

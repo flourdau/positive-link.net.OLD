@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ app.SITE.APP_TITLE }}{% endblock %}
+
+{% block myBg %}<style>body {background-image:url(/design/img/bg/webP/00.webp)}</style>{% endblock %}
+{% block stylesheets %}
+<!-- CSS -->
+                <link rel="stylesheet" href="/design/css/home.css"/>
+                <link rel="stylesheet" href="/design/css/portfolio.css"/>
+{% endblock %}
+{% block nav %}{% endblock %}
+{% block message %}{% endblock %}
+{% block myShell %}
+                        <section id="shell" class="myShell">
+                                <div>
+                                        <!-- Barre -->
+                                        <div class="myMax600px bgColor1_98">
+                                                <ul>
+                                                        <li><i class="material-icons btnCode">code</i></li>
+                                                        <li>Portfolio</li>
+                                                        <li>
+                                                                <ul>
+                                                                        <li><i class="material-icons btnMinimize">minimize</i></li>
+                                                                        <li><i class="material-icons btnMaximize">web_asset</i></li>
+                                                                        <li><i class="material-icons btnClose">disabled_by_default</i></li>
+                                                                </ul>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <!-- Content -->
+                                        <div class="myMax600px bgColor1_98">
+                                        <section id="portfolio">
+                                                <p>user@positive-link:<span class="blueColor">~/portfolio</span>$<span>ls</span></p>
+                                                {% apply markdown_to_html %}{{ myReadMePortfolio }}{% endapply %}
+                                        </section>
+                                        </div>
+                                </div>
+                        </section>
+{% endblock %}
+{% block myClock %}{% endblock %}
+{% block main %}{% endblock %}
+{% block controls %}{% endblock %}
+{% block scripts %}
+        <script src="/js/lib/myShell.js"></script>
+        <script src="/js/ancre.js"></script>
+{% endblock %}
