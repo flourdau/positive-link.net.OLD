@@ -9,6 +9,7 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
+/composer.phar
 /.prod.sh
 /config/.app.json
 /depotsGIT/
